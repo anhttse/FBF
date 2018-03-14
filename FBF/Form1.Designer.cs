@@ -1,6 +1,6 @@
 ﻿namespace FBF
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -96,11 +96,12 @@
             this.pgComplete.Size = new System.Drawing.Size(418, 10);
             this.pgComplete.TabIndex = 6;
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(506, 139);
+            this.ControlBox = false;
             this.Controls.Add(this.pgComplete);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtFilePath);
@@ -108,7 +109,8 @@
             this.Controls.Add(this.btnGet);
             this.Controls.Add(this.lbToken);
             this.Controls.Add(this.txtToken);
-            this.Name = "Form1";
+            this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FB Getfriends";
             this.ResumeLayout(false);
             this.PerformLayout();
