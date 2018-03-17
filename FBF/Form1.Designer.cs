@@ -34,7 +34,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
-            this.pgComplete = new System.Windows.Forms.ProgressBar();
+            this.prComplete = new System.Windows.Forms.ProgressBar();
+            this.backgroundWorker_getFriends = new System.ComponentModel.BackgroundWorker();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtToken
@@ -76,7 +78,7 @@
             // 
             this.txtFilePath.Location = new System.Drawing.Point(65, 56);
             this.txtFilePath.Name = "txtFilePath";
-            this.txtFilePath.Size = new System.Drawing.Size(418, 20);
+            this.txtFilePath.Size = new System.Drawing.Size(379, 20);
             this.txtFilePath.TabIndex = 4;
             // 
             // btnExit
@@ -89,12 +91,30 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // pgComplete
+            // prComplete
             // 
-            this.pgComplete.Location = new System.Drawing.Point(65, 117);
-            this.pgComplete.Name = "pgComplete";
-            this.pgComplete.Size = new System.Drawing.Size(418, 10);
-            this.pgComplete.TabIndex = 6;
+            this.prComplete.Location = new System.Drawing.Point(65, 117);
+            this.prComplete.Name = "prComplete";
+            this.prComplete.Size = new System.Drawing.Size(418, 10);
+            this.prComplete.TabIndex = 6;
+            // 
+            // backgroundWorker_getFriends
+            // 
+            this.backgroundWorker_getFriends.WorkerReportsProgress = true;
+            this.backgroundWorker_getFriends.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_getFriends_DoWork);
+            this.backgroundWorker_getFriends.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_getFriends_ProgressChanged);
+            this.backgroundWorker_getFriends.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_getFriends_RunWorkerCompleted);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(450, 53);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(33, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "...";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Main
             // 
@@ -102,7 +122,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(506, 139);
             this.ControlBox = false;
-            this.Controls.Add(this.pgComplete);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.prComplete);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtFilePath);
             this.Controls.Add(this.label1);
@@ -125,7 +146,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.ProgressBar pgComplete;
+        private System.Windows.Forms.ProgressBar prComplete;
+        private System.ComponentModel.BackgroundWorker backgroundWorker_getFriends;
+        private System.Windows.Forms.Button button2;
     }
 }
 
